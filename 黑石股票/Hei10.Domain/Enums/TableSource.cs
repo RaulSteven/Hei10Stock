@@ -55,5 +55,11 @@ namespace Hei10.Domain.Enums
         SealInfo = 21,
         [Description("会议室使用申请")]
         MeetingRoomInfo = 22,
+        [Description("股票")]
+        Stock = 23,
+        [Description("股票市场")]
+        StockMarket = 24,
+        [Description("股票记录")]
+        StockRecord = 25,
     }
 }

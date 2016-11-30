@@ -90,6 +90,9 @@
     <Compile Include="PartnerRepository.cs" />
     <Compile Include="RecruitJobRepository.cs" />
     <Compile Include="SealInfoRepository.cs" />
+    <Compile Include="StockRecordRepository.cs" />
+    <Compile Include="StockMarketRepository.cs" />
+    <Compile Include="StockRepository.cs" />
     <Compile Include="SysApartmentRepository.cs" />
     <Compile Include="SysButtonRepository.cs" />
     <Compile Include="SysConfigRepository.cs" />

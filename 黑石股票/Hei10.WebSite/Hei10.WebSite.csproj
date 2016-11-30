@@ -1085,6 +1085,7 @@
     <Compile Include="Areas\Admin\Controllers\RecruitJobController.cs" />
     <Compile Include="Areas\Admin\Controllers\ConsultController.cs" />
     <Compile Include="Areas\Admin\Controllers\FrontMenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StockController.cs" />
     <Compile Include="Areas\Admin\Controllers\WorkflowApplyController.cs" />
     <Compile Include="Areas\Admin\Controllers\WorkflowController.cs" />
     <Compile Include="Areas\Admin\Controllers\WorkFlowDesignerController.cs" />
@@ -1106,6 +1107,7 @@
     <Compile Include="Areas\Admin\Models\PartnerModel.cs" />
     <Compile Include="Areas\Admin\Models\SealInfoModel.cs" />
     <Compile Include="Areas\Admin\Models\SetRoleModel.cs" />
+    <Compile Include="Areas\Admin\Models\StockMarketModel.cs" />
     <Compile Include="Areas\Admin\Models\WfActivitySelectModel.cs" />
     <Compile Include="Areas\Admin\Models\UserModel.cs" />
     <Compile Include="Areas\Admin\Controllers\SysApartController.cs" />
@@ -1240,6 +1242,8 @@
     <Content Include="Areas\Admin\Views\Workflow\ApplyList.cshtml" />
     <Content Include="Areas\Admin\Views\Workflow\BackStepSelect.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_ApplyList.cshtml" />
+    <Content Include="Areas\Admin\Views\Stock\MarketEdit.cshtml" />
+    <Content Include="Areas\Admin\Views\Stock\MarketList.cshtml" />
     <None Include="Properties\PublishProfiles\JRWebSite.pubxml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />

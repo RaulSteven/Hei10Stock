@@ -7,6 +7,7 @@ using AutoMapper;
 using Hei10.Domain.ViewModels;
 using Hei10.WebSite.Areas.Admin.Models;
 using Hei10.WebSite.Models;
+using Hei10.Domain.Models.Stock;
 
 namespace Hei10.WebSite
 {
@@ -84,6 +85,14 @@ namespace Hei10.WebSite
                 cfg.CreateMap<MeetingRoomInfo, MeetingRoomInfoModel>();
                 cfg.CreateMap<MeetingRoomInfoModel, MeetingRoomInfo>()
                    .ForMember(dest => dest.Id, opt => opt.Ignore());
+
+                cfg.CreateMap<StockMarket, StockMarketModel>();
+                cfg.CreateMap<StockMarketModel, StockMarket>()
+                   .ForMember(dest => dest.Id, opt => opt.Ignore())
+                   .ForMember(dest => dest.CreateIP, opt => opt.Ignore())
+                   .ForMember(dest => dest.CreateTime, opt => opt.Ignore())
+                   .ForMember(dest => dest.CreateUserId, opt => opt.Ignore())
+                   .ForMember(dest => dest.CreateUserName, opt => opt.Ignore());
             });
         }
     }

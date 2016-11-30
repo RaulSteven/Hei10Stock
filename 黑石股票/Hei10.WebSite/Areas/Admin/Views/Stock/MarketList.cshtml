@@ -1,0 +1,62 @@
+﻿@model List<StockMarket>
+@{
+    SysUser user = ViewBag.CurrUser;
+}
+<script type="text/javascript">
+    $('.get-verification-token').attr({ "data-data": "__RequestVerificationToken=" + $('input[name="__RequestVerificationToken"]').val() });
+</script>
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="@Url.Action("MarketList")" method="GET">
+        <input type="hidden" name="tabId" value="@Request["tabId"]" />
+        <div class="bjui-searchBar">
+            @if (user.HasButton(SysButton.Edit))
+            {
+                <a href="@Url.Action("MarketEdit",new { tabId = Request["tabId"]})" data-width="800" data-height="400" class="btn btn-green" data-toggle="dialog" data-id="stock-market-edit" data-reload-warn="本页已有打开的内容，确定将刷新本页内容，是否继续？" data-title="添加">添加</a>
+            }
+            @if (user.HasButton(SysButton.Delete))
+            {
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn-default dropdown-toggle" data-toggle="dropdown" data-icon="copy">复选框-批量操作<span class="caret"></span></button>
+                        <ul class="dropdown-menu right" role="menu">
+                            <li><a href="@Url.Action("MarketDelete")" class="get-verification-token" data-toggle="doajaxchecked" data-confirm-msg="确定要删除选中项吗？" data-idname="ids" data-group="ids">删除选中</a></li>
+                        </ul>
+                    </div>
+                </div>
+            }
+        </div>
+    </form>
+</div>
+<div class="bjui-pageContent tableContent">
+    <table data-toggle="tablefixed" data-width="100%" data-nowrap="true">
+        <thead>
+            <tr>
+                <th width="26"><input type="checkbox" class="checkboxCtrl" data-group="ids" data-toggle="icheck"></th>
+                <th>名称</th>
+                <th>接口</th>
+                <th>创建时间</th>
+                <th>创建人</th>
+                <th width="100">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr data-id="@(item.Id)">
+                    <td><input type="checkbox" name="ids" data-toggle="icheck" value="@(item.Id)"></td>
+                    <td>@item.Name</td>
+                    <td>@item.RequestUrl</td>
+                    <td>@item.CreateTime.ToDisplayDateTime()</td>
+                    <td>@item.CreateUserName</td>
+                    <td>
+                        @if (user.HasButton(SysButton.Edit))
+                        {
+                            <a href="@Url.Action("MarketEdit", new {id = item.Id,tabId = Request["tabId"]})" data-width="800" data-height="400"  class="btn btn-green" data-toggle="dialog" data-id="stock-market-edit" data-reload-warn="本页已有打开的内容，确定将刷新本页内容，是否继续？" data-title="编辑-@(item.Name)">编辑</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@Html.AntiForgeryToken()

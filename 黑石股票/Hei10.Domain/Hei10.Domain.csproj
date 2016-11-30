@@ -205,6 +205,9 @@
     <Compile Include="Repositories\IPartnerRepository.cs" />
     <Compile Include="Repositories\IRecruitJobRepository.cs" />
     <Compile Include="Repositories\ISealInfoRepository.cs" />
+    <Compile Include="Repositories\IStockRecordRepository.cs" />
+    <Compile Include="Repositories\IStockRepository.cs" />
+    <Compile Include="Repositories\IStockMarketRepository.cs" />
     <Compile Include="Repositories\ISysConfigRepository.cs" />
     <Compile Include="Repositories\ISysApartmentRepository.cs" />
     <Compile Include="Repositories\ISysMenuRepository.cs" />
