@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Hei10.Domain.Models;
 using Hei10.Domain.Entityframework.ModelConfigurations;
 using Hei10.Domain.Models.Workflow;
+using Hei10.Domain.Models.Stock;
 
 namespace Hei10.Domain.Entityframework
 {
@@ -79,6 +80,15 @@ namespace Hei10.Domain.Entityframework
 
         #region 会议室
         public virtual DbSet<MeetingRoomInfo> MeetingRoomInfo { get; set; }
+        #endregion
+
+        #region 股票
+
+        public virtual DbSet<Stock> Stock { get; set; }
+        public virtual DbSet<StockMarket> StockMarket { get; set; }
+        public virtual DbSet<StockRecord> StockRecord { get; set; }
+
+
         #endregion
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

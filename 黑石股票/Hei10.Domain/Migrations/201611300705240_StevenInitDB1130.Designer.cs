@@ -7,13 +7,13 @@ namespace Hei10.Domain.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class StevenInitDb1031 : IMigrationMetadata
+    public sealed partial class StevenInitDB1130 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(StevenInitDb1031));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(StevenInitDB1130));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610310642539_StevenInitDb1031"; }
+            get { return "201611300705240_StevenInitDB1130"; }
         }
         
         string IMigrationMetadata.Source

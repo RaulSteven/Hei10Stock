@@ -3,7 +3,7 @@ namespace Hei10.Domain.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class StevenInitDb1031 : DbMigration
+    public partial class StevenInitDB1130 : DbMigration
     {
         public override void Up()
         {

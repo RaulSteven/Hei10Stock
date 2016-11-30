@@ -105,6 +105,7 @@
     <Compile Include="Entityframework\DbFactory.cs" />
     <Compile Include="Entityframework\IDbFactory.cs" />
     <Compile Include="Entityframework\Hei10Context.cs" />
+    <Compile Include="Entityframework\ModelConfigurations\StockRecordConfiguration.cs" />
     <Compile Include="Entityframework\ModelConfigurations\WfProcessInstanceConfiguration.cs" />
     <Compile Include="Entityframework\ModelConfigurations\WfActivityInstanceConfiguration.cs" />
     <Compile Include="Enums\AdPosKey.cs" />
@@ -138,9 +139,13 @@
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\JRUserEmpty.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
-    <Compile Include="Migrations\201610310642539_StevenInitDb1031.cs" />
-    <Compile Include="Migrations\201610310642539_StevenInitDb1031.Designer.cs">
-      <DependentUpon>201610310642539_StevenInitDb1031.cs</DependentUpon>
+    <Compile Include="Migrations\201611300705240_StevenInitDB1130.cs" />
+    <Compile Include="Migrations\201611300705240_StevenInitDB1130.Designer.cs">
+      <DependentUpon>201611300705240_StevenInitDB1130.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611300833355_StevenAddStock1130.cs" />
+    <Compile Include="Migrations\201611300833355_StevenAddStock1130.Designer.cs">
+      <DependentUpon>201611300833355_StevenAddStock1130.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelMethods\Advert.cs" />
@@ -167,6 +172,9 @@
     <Compile Include="Models\RecruitJob.cs" />
     <Compile Include="Models\PropertyModel.cs" />
     <Compile Include="Models\SealInfo.cs" />
+    <Compile Include="Models\Stock\Stock.cs" />
+    <Compile Include="Models\Stock\StockMarket.cs" />
+    <Compile Include="Models\Stock\StockRecord.cs" />
     <Compile Include="Models\SysApartment.cs" />
     <Compile Include="Models\SysConfig.cs" />
     <Compile Include="Models\SysMenu.cs" />
@@ -251,8 +259,11 @@
     <Content Include="Migrations\说明.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610310642539_StevenInitDb1031.resx">
-      <DependentUpon>201610310642539_StevenInitDb1031.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611300705240_StevenInitDB1130.resx">
+      <DependentUpon>201611300705240_StevenInitDB1130.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611300833355_StevenAddStock1130.resx">
+      <DependentUpon>201611300833355_StevenAddStock1130.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
