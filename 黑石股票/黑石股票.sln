@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hei10.Test", "Hei10.Test\Hei10.Test.csproj", "{75C0C9E2-5660-41A1-91C1-4E4F3988EC65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Libraries", "01 Libraries", "{7649125F-64FD-4691-B5AA-30ECD53029D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hei10.Core", "Hei10.Core\Hei10.Core.csproj", "{263F36C1-79E8-46E6-A34B-E9AF95D8EDDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75C0C9E2-5660-41A1-91C1-4E4F3988EC65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C0C9E2-5660-41A1-91C1-4E4F3988EC65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C0C9E2-5660-41A1-91C1-4E4F3988EC65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C0C9E2-5660-41A1-91C1-4E4F3988EC65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{263F36C1-79E8-46E6-A34B-E9AF95D8EDDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{263F36C1-79E8-46E6-A34B-E9AF95D8EDDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{263F36C1-79E8-46E6-A34B-E9AF95D8EDDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{263F36C1-79E8-46E6-A34B-E9AF95D8EDDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{263F36C1-79E8-46E6-A34B-E9AF95D8EDDB} = {7649125F-64FD-4691-B5AA-30ECD53029D4}
+	EndGlobalSection
+EndGlobal
