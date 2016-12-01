@@ -384,5 +384,21 @@ namespace Hei10.Domain.Repositories
             }
         }
         #endregion
+
+
+        #region 股票查询key
+
+        public string JuheStockKey
+        {
+            get
+            {
+                return GetConfig<string>(MethodBase.GetCurrentMethod());
+            }
+            set
+            {
+                SetConfig(MethodBase.GetCurrentMethod(), value);
+            }
+        }
+        #endregion
     }
 }

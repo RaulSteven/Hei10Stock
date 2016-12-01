@@ -199,4 +199,21 @@ namespace Hei10.WebSite.Areas.Admin.Models
         [Required(ErrorMessage = "请输入{0}")]
         public string SeachClassifyId { get; set; }
     }
+
+    public class JuheSettingModel
+    {
+        public void Init(ISysConfigRepository sysConfigRepository)
+        {
+            JuheStockKey = sysConfigRepository.JuheStockKey;
+        }
+
+        public void Save(ISysConfigRepository sysConfigRepository)
+        {
+            sysConfigRepository.JuheStockKey = JuheStockKey;
+        }
+
+        [Display(Name = "股票查询Key")]
+        [Required(ErrorMessage = "请输入{0}")]
+        public string JuheStockKey { get; set; }
+    }
 }

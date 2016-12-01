@@ -147,6 +147,10 @@
     <Compile Include="Migrations\201611300833355_StevenAddStock1130.Designer.cs">
       <DependentUpon>201611300833355_StevenAddStock1130.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612010615274_StevenUpdateMarket1201.cs" />
+    <Compile Include="Migrations\201612010615274_StevenUpdateMarket1201.Designer.cs">
+      <DependentUpon>201612010615274_StevenUpdateMarket1201.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelMethods\Advert.cs" />
     <Compile Include="ModelMethods\Attachment.cs" />
@@ -166,6 +170,7 @@
     <Compile Include="Models\Consult.cs" />
     <Compile Include="Models\ConsultClassify.cs" />
     <Compile Include="Models\FrontMenu.cs" />
+    <Compile Include="Models\JobTask.cs" />
     <Compile Include="Models\LeaveInfo.cs" />
     <Compile Include="Models\MeetingRoomInfo.cs" />
     <Compile Include="Models\Partner.cs" />
@@ -200,6 +205,7 @@
     <Compile Include="Repositories\IConsultClassifyRepository.cs" />
     <Compile Include="Repositories\IConsultRepository.cs" />
     <Compile Include="Repositories\IFrontMenuRepository.cs" />
+    <Compile Include="Repositories\IJobTaskRepository.cs" />
     <Compile Include="Repositories\ILeaveInfoRepository.cs" />
     <Compile Include="Repositories\IMeetingRoomInfoRepository.cs" />
     <Compile Include="Repositories\IPartnerRepository.cs" />
@@ -267,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611300833355_StevenAddStock1130.resx">
       <DependentUpon>201611300833355_StevenAddStock1130.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612010615274_StevenUpdateMarket1201.resx">
+      <DependentUpon>201612010615274_StevenUpdateMarket1201.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

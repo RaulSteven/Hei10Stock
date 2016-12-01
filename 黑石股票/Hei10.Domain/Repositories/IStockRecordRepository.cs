@@ -9,5 +9,6 @@ namespace Hei10.Domain.Repositories
 {
    public interface IStockRecordRepository : IRepository<StockRecord>
     {
+        StockRecord GetToday(long stockId);
     }
 }

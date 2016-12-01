@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Hei10.Domain.Infrastructure;
 using Hei10.Domain.Models.Stock;
 using PagedList;
+using System.Data.Entity;
 
 namespace Hei10.Domain.Repositories
 {
@@ -19,6 +20,14 @@ namespace Hei10.Domain.Repositories
                 query = query.Where(m => m.Name.Contains(name));
             }
             var list = ToPageList(query, orderField, orderDirection, m => m.Id, pageIndex, pageSize);
+            return list;
+        }
+
+        public Task<List<Stock>> GetListAsync(long marketId)
+        {
+            var list = AdminQueryEnable()
+                .Where(m => m.StockMarketId == marketId)
+                .ToListAsync();
             return list;
         }
     }

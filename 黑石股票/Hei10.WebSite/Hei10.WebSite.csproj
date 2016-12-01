@@ -1247,6 +1247,7 @@
     <Content Include="Areas\Admin\Views\Stock\MarketList.cshtml" />
     <Content Include="Areas\Admin\Views\Stock\StockEdit.cshtml" />
     <Content Include="Areas\Admin\Views\Stock\StockList.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\JuheSetting.cshtml" />
     <None Include="Properties\PublishProfiles\JRWebSite.pubxml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />

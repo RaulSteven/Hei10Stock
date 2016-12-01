@@ -37,6 +37,36 @@
                 </tr>
                 <tr>
                     <td>
+                        <label for="" class="control-label x85">@Html.DisplayNameFor(m => m.StockKey)：</label>
+                        @Html.TextBoxFor(m => m.StockKey, new { @class = "input-lg w500", @data_rule = "required;length[~10]" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="" class="control-label x85">@Html.DisplayNameFor(m => m.OpenPriceKey)：</label>
+                        @Html.TextBoxFor(m => m.OpenPriceKey, new { @class = "input-lg w500", @data_rule = "required;length[~20]" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="" class="control-label x85">@Html.DisplayNameFor(m => m.FormPriceKey)：</label>
+                        @Html.TextBoxFor(m => m.FormPriceKey, new { @class = "input-lg w500", @data_rule = "required;length[~20]" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="" class="control-label x85">@Html.DisplayNameFor(m => m.MaxPriceKey)：</label>
+                        @Html.TextBoxFor(m => m.MaxPriceKey, new { @class = "input-lg w500", @data_rule = "required;length[~20]" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="" class="control-label x85">@Html.DisplayNameFor(m => m.MinPriceKey)：</label>
+                        @Html.TextBoxFor(m => m.MinPriceKey, new { @class = "input-lg w500", @data_rule = "required;length[~20]" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <label for="txtRemark" class="control-label x85">备注信息：</label>
                         <textarea cols="30" id="txtRemark" name="Remark" class="form-control" data-rule="length[~500]" style="width: 500px; margin: 0px; height: 46px;">@Model.Remark</textarea>
                     </td>

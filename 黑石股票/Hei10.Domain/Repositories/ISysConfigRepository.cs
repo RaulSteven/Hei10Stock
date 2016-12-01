@@ -71,5 +71,11 @@ namespace Hei10.Domain.Repositories
         #region 文章搜索分类配置
         string SeachClassifyId { get; set; }
         #endregion
+
+        #region 股票查询key
+
+        string JuheStockKey { get; set; }
+
+        #endregion
     }
 }

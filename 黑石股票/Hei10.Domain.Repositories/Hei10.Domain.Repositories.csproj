@@ -85,6 +85,7 @@
     <Compile Include="ConsultClassifyRepository.cs" />
     <Compile Include="ConsultRepository.cs" />
     <Compile Include="FrontMenuRepository.cs" />
+    <Compile Include="JobTaskRepository.cs" />
     <Compile Include="LeaveInfoRepository.cs" />
     <Compile Include="MeetingRoomInfoRepository.cs" />
     <Compile Include="PartnerRepository.cs" />

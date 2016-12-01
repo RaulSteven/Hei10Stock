@@ -12,5 +12,7 @@ namespace Hei10.Domain.Repositories
    public interface IStockRepository : IRepository<Stock>
     {
         IPagedList<Stock> GetList(string name, string orderField, string orderDirection, int pageSize, int pageIndex);
+
+        Task<List<Stock>> GetListAsync(long marketId);
     }
 }

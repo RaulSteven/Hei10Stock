@@ -193,5 +193,30 @@ namespace Hei10.WebSite.Areas.Admin.Controllers
             result.message = "保存成功！";
             return Json(result);
         }
+
+        [ValidatePage]
+        public ActionResult JuheSetting()
+        {
+            var model = new JuheSettingModel();
+            model.Init(SysConfigRepository);
+            return PartialView(model);
+        }
+
+        [ValidateButton(Buttons = SysButton.Save, ActionName = "JuheSetting")]
+        [HttpPost]
+        public async Task<ActionResult> JuheSetting(JuheSettingModel model)
+        {
+            var result = new JsonModel();
+            if (!ModelState.IsValid)
+            {
+                result.GetError(ModelState);
+                return Json(result);
+            }
+            model.Save(SysConfigRepository);
+            await LogRepository.Insert(TableSource.SysConfigures, OperationType.Update, "保存聚合设置", 0);
+            result.Data = model;
+            result.message = "保存成功！";
+            return Json(result);
+        }
     }
 }
