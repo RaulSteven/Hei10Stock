@@ -91,6 +91,10 @@ namespace Hei10.Domain.Entityframework
 
         #endregion
 
+        #region 后台任务
+        public virtual DbSet<JobTask> JobTask { get; set; }
+        #endregion
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

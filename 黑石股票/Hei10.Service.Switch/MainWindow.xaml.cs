@@ -47,13 +47,21 @@ namespace Hei10.Service.Switch
 
         private void btnSetup_Click(object sender, RoutedEventArgs e)
         {
-            // 卸载服务
-            ServiceHelper.UnInstallService(AppGlobal.SvcName, AppGlobal.SvcInstallPath);
-            ServiceHelper.KillProcess(AppGlobal.AppExeName);
+            try
+            {
+                // 卸载服务
+                ServiceHelper.UnInstallService(AppGlobal.SvcName, AppGlobal.SvcInstallPath);
+                ServiceHelper.KillProcess(AppGlobal.AppExeName);
 
-            // 安装服务
-            ServiceHelper.InstallService(AppGlobal.SvcName, AppGlobal.SvcInstallPath);
-            this.CheckStatus();
+                // 安装服务
+                ServiceHelper.InstallService(AppGlobal.SvcName, AppGlobal.SvcInstallPath);
+                this.CheckStatus();
+            }
+            catch (System.Exception ex)
+            {
+                Log.Error("安装服务错误！", ex);
+            }
+          
         }
 
         private void btnRemove_Click(object sender, RoutedEventArgs e)

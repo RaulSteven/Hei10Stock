@@ -34,6 +34,7 @@ namespace Hei10.Service.Switch
             }
             catch (Exception ex)
             {
+                
                 throw new Exception("安装服务出错：" + ex.Message);
             }
         }

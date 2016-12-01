@@ -151,6 +151,10 @@
     <Compile Include="Migrations\201612010615274_StevenUpdateMarket1201.Designer.cs">
       <DependentUpon>201612010615274_StevenUpdateMarket1201.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612010805346_StevenAddJobTask1201.cs" />
+    <Compile Include="Migrations\201612010805346_StevenAddJobTask1201.Designer.cs">
+      <DependentUpon>201612010805346_StevenAddJobTask1201.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelMethods\Advert.cs" />
     <Compile Include="ModelMethods\Attachment.cs" />
@@ -276,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612010615274_StevenUpdateMarket1201.resx">
       <DependentUpon>201612010615274_StevenUpdateMarket1201.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612010805346_StevenAddJobTask1201.resx">
+      <DependentUpon>201612010805346_StevenAddJobTask1201.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

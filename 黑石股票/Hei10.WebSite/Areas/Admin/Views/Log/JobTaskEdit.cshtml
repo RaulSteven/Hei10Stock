@@ -1,0 +1,93 @@
+﻿@model JobTask
+<script type="text/javascript">
+    var tabId = '@Request["tabId"]';
+    function button_callback(json) {
+        if (json.Error) {
+            for (var i = 0; i < json.Error.length; i++) {
+                $('#' + json.Error[i].Key).next('span').html('<span class="msg-box n-right" style="" for="' + json.Error[i].Value + '"><span class="msg-wrap n-error" role="alert" style="left: 0px; opacity: 1;"><span class="n-arrow"><b>◆</b><i>◆</i></span><span class="glyphicon glyphicon-remove-circle" style="top: -1px; font-size: 14px; vertical-align: middle;"></span><span class="n-msg">' + json.Error[i].Value + '</span></span></span></span>').show();
+            }
+        } else {
+            $(this)
+                .bjuiajax('ajaxDone', json) // 信息提示
+                .navtab('closeCurrentTab')
+                .navtab('switchTab', tabId)
+                .navtab('reloadForm',false, tabId);
+        }
+
+    }
+</script>
+@using (Html.BeginForm("JobTaskEdit", "Log", FormMethod.Post, new { @data_toggle = "validate", @data_alertmsg = "false", @data_callback = "button_callback" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Partial("_Edit_Hidden_Base")
+    @Html.HiddenFor(m => m.TaskId)
+    @Html.HiddenFor(m => m.RecentRunTime)
+    @Html.HiddenFor(m => m.LastRunTime)
+    <div class="bjui-pageContent">
+        <table class="table-bordered table-condensed table-hover" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.TaskName, new { @class = "control-label x85" })
+                        @Html.TextBoxFor(m => m.TaskName, new { @class = "input-lg w500", @data_rule = "required;length[~50]" })
+                        @Html.ValidationMessageFor(m => m.TaskName)
+                        必填，最多255个字符。
+                    </td>
+                </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.TaskParam, new {@class = "control-label x85"})
+                    @Html.TextBoxFor(m => m.TaskParam, new {@class = "input-lg w500"})
+                    @Html.ValidationMessageFor(m => m.TaskParam)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.CronExpressionString, new {@class = "control-label x85"})
+                    @Html.TextBoxFor(m => m.CronExpressionString, new {@class = "input-lg w500", @data_rule = "length[~200]"})
+                    @Html.ValidationMessageFor(m => m.TaskName)
+                    最多200个字符。
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.CronRemark, new {@class = "control-label x85"})
+                    @Html.TextBoxFor(m => m.CronRemark, new {@class = "input-lg w500", @data_rule = "length[~300]"})
+                    @Html.ValidationMessageFor(m => m.CronRemark)
+                    最多300个字符。
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Assembly, new {@class = "control-label x85"})
+                    @Html.TextBoxFor(m => m.Assembly, new {@class = "input-lg w500", @data_rule = "length[~150]"})
+                    @Html.ValidationMessageFor(m => m.Assembly)
+                    最多150个字符。
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Class, new {@class = "control-label x85"})
+                    @Html.TextBoxFor(m => m.Class, new {@class = "input-lg w500", @data_rule = "length[~150]"})
+                    @Html.ValidationMessageFor(m => m.Class)
+                    最多150个字符。
+                </td>
+            </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.Remark, new { @class = "control-label x85" })
+                        @Html.TextAreaFor(m => m.Remark, 18, 60, new { @data_rule = "length[~200]" })
+                        @Html.ValidationMessageFor(m => m.Remark)
+                        最多200个字符。
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="bjui-pageFooter">
+        <ul>
+            <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+            <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+        </ul>
+    </div>
+}

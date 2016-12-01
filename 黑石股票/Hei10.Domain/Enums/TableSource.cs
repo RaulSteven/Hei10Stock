@@ -61,5 +61,7 @@ namespace Hei10.Domain.Enums
         StockMarket = 24,
         [Description("股票记录")]
         StockRecord = 25,
+        [Description("后台任务")]
+        JobTask = 26,
     }
 }

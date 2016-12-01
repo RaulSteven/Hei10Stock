@@ -31,7 +31,7 @@
   <Task name="MLS.Service.Tasks.Jobs.DownloadCarInfoJob" cronExpression="0 0 18 * * ?" />
   <Task name="MLS.Service.Tasks.Jobs.DayStatisticsJob" cronExpression="0 0/10 * * * ?" />
   <Task name="MLS.Service.Tasks.Jobs.WeixinNotifyJob" cronExpression="0/30 * * * * ?" />-->
-  <Task name="MLS.Service.Tasks.Jobs.TaskManagerJob" cronExpression="0/5 * * * * ?" />
+  <Task name="Hei10.Service.Tasks.Jobs.TaskManagerJob" cronExpression="0/5 * * * * ?" />
 </Tasks>
 
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hei10.Service.WinServer.Common;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace Hei10.Service.WinServer
         public ProjectInstaller()
         {
             InitializeComponent();
+            serviceInstaller1.ServiceName = AppGlobal.SvcName;
         }
     }
 }

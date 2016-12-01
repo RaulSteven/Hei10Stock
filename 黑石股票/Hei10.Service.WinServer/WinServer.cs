@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hei10.Service.Tasks;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,10 +20,12 @@ namespace Hei10.Service.WinServer
 
         protected override void OnStart(string[] args)
         {
+            TaskManager.Start();
         }
 
         protected override void OnStop()
         {
+            TaskManager.Stop();
         }
     }
 }

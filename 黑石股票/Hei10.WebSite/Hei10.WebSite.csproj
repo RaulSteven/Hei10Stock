@@ -1248,6 +1248,9 @@
     <Content Include="Areas\Admin\Views\Stock\StockEdit.cshtml" />
     <Content Include="Areas\Admin\Views\Stock\StockList.cshtml" />
     <Content Include="Areas\Admin\Views\Config\JuheSetting.cshtml" />
+    <Content Include="Areas\Admin\Views\Log\JobTask.cshtml" />
+    <Content Include="Areas\Admin\Views\Log\JobTaskEdit.cshtml" />
+    <None Include="Properties\PublishProfiles\Hei10Stock.pubxml" />
     <None Include="Properties\PublishProfiles\JRWebSite.pubxml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
