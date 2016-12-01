@@ -1108,6 +1108,7 @@
     <Compile Include="Areas\Admin\Models\SealInfoModel.cs" />
     <Compile Include="Areas\Admin\Models\SetRoleModel.cs" />
     <Compile Include="Areas\Admin\Models\StockMarketModel.cs" />
+    <Compile Include="Areas\Admin\Models\StockModel.cs" />
     <Compile Include="Areas\Admin\Models\WfActivitySelectModel.cs" />
     <Compile Include="Areas\Admin\Models\UserModel.cs" />
     <Compile Include="Areas\Admin\Controllers\SysApartController.cs" />
@@ -1244,6 +1245,8 @@
     <Content Include="Areas\Admin\Views\Shared\_ApplyList.cshtml" />
     <Content Include="Areas\Admin\Views\Stock\MarketEdit.cshtml" />
     <Content Include="Areas\Admin\Views\Stock\MarketList.cshtml" />
+    <Content Include="Areas\Admin\Views\Stock\StockEdit.cshtml" />
+    <Content Include="Areas\Admin\Views\Stock\StockList.cshtml" />
     <None Include="Properties\PublishProfiles\JRWebSite.pubxml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />

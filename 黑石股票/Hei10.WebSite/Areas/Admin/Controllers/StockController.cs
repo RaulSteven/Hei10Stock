@@ -109,5 +109,93 @@ namespace Hei10.WebSite.Areas.Admin.Controllers
         }
         #endregion
 
+        #region 股票
+        [ValidatePage]
+        public ActionResult StockList(string name, string orderField, string orderDirection, int pageSize = 30, int pageIndex = 1)
+        {
+            ViewBag.Name = name;
+            var list = StockRepository.GetList(name,orderField,orderDirection,pageSize,pageIndex);
+            return View(list);
+        }
+
+        [ValidateButton(Buttons = SysButton.Edit, ActionName = "StockList")]
+        public async Task<ActionResult> StockEdit(long id = 0)
+        {
+            var model = new StockModel()
+            {
+                MarketList = await StockMarketRepository.GetListAsync()
+            };
+            if (id == 0)
+            {
+                return PartialView(model);
+            }
+            var stock = await StockRepository.GetEnableByIdAsync(id);
+            if (stock == null)
+            {
+                var json = new JsonModel { message = "记录不存在了", statusCode = 300 };
+                return Json(json, JsonRequestBehavior.AllowGet);
+            }
+            Mapper.Map(stock, model);
+            return PartialView(model);
+        }
+
+        [ValidateButton(Buttons = SysButton.Edit, ActionName = "StockList")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> StockEdit(StockModel model)
+        {
+            var result = new JsonModel();
+            if (!ModelState.IsValid)
+            {
+                result.GetError(ModelState);
+                return Json(result);
+            }
+
+            Stock stock = null;
+            var operationType = OperationType.Update;
+            if (model.Id > 0)
+            {
+                operationType = OperationType.Update;
+                stock = await StockRepository.GetEnableByIdAsync(model.Id);
+                if (stock == null)
+                {
+                    result.statusCode = 300;
+                    result.message = "该条数据不存在，请刷新重试！";
+                    return Json(result);
+                }
+            }
+            else
+            {
+                stock = new Stock();
+            }
+            Mapper.Map(model, stock);
+            stock.CommonStatus = CommonStatus.Enabled;
+            await StockRepository.SaveAsync(stock);
+            await LogRepository.Insert(TableSource.Stock, operationType, "", stock.Id);
+            result.Data = stock;
+            result.message = "保存成功！";
+            return Json(result);
+        }
+
+        [ValidateButton(Buttons = SysButton.Delete, ActionName = "StockList")]
+        public async Task<ActionResult> StockDelete(string ids)
+        {
+            var result = new JsonModel { statusCode = 300, message = "删除失败,记录不存在！", closeCurrent = false };
+            if (string.IsNullOrEmpty(ids))
+            {
+                return Json(result);
+            }
+            var list = await StockRepository.BatchDeleteAsync(ids);
+            if (list == null)
+            {
+                return Json(result);
+            }
+            var msg = string.Join(",", list.Select(m => m.Name).ToArray()).ToEllipsis(100);
+            await LogRepository.Insert(TableSource.Stock, OperationType.Delete, string.Format("批量删除{0}等股票", msg), ids);
+            result.statusCode = 200;
+            result.message = "删除成功！";
+            return Json(result);
+        }
+        #endregion
     }
 }

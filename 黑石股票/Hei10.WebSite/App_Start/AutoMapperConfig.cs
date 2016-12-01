@@ -93,6 +93,14 @@ namespace Hei10.WebSite
                    .ForMember(dest => dest.CreateTime, opt => opt.Ignore())
                    .ForMember(dest => dest.CreateUserId, opt => opt.Ignore())
                    .ForMember(dest => dest.CreateUserName, opt => opt.Ignore());
+
+                cfg.CreateMap<Stock, StockModel>();
+                cfg.CreateMap<StockModel, Stock>()
+                   .ForMember(dest => dest.Id, opt => opt.Ignore())
+                   .ForMember(dest => dest.CreateIP, opt => opt.Ignore())
+                   .ForMember(dest => dest.CreateTime, opt => opt.Ignore())
+                   .ForMember(dest => dest.CreateUserId, opt => opt.Ignore())
+                   .ForMember(dest => dest.CreateUserName, opt => opt.Ignore());
             });
         }
     }
